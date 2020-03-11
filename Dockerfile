@@ -21,12 +21,12 @@ RUN mkdir /etc/nginx/default.d
 ADD files/entrypoint.sh /opt/entrypoint.sh
 RUN chmod +x /opt/entrypoint.sh
 
-ENV NGINX_SERVER_NAME="_"
-ENV SAML_IDP_LOGIN_URL="https://idp.example.net/sso_redirect"
-ENV SAML_IDP_CERTIFICATE_FILE="/etc/nginx/idp.crt"
-ENV SAML_SP_ENTRY_ID="https://localhost/sso"
-ENV SAML_SP_ACS_URL="https://localhost/sso/finish-login"
-ENV SAML_USERNAME_ATTRIBUTE_NAME="username"
+ENV NGINX_SERVER_NAME="_" \
+    SAML_IDP_LOGIN_URL="https://idp.example.net/sso_redirect" \
+    SAML_IDP_CERTIFICATE_FILE="/etc/nginx/idp.crt" \
+    SAML_SP_ENTRY_ID="https://localhost/sso" \
+    SAML_SP_ACS_URL="https://localhost/sso/finish-login" \
+    SAML_USERNAME_ATTRIBUTE_NAME="username"
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 EXPOSE 80

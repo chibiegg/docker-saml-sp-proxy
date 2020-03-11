@@ -7,7 +7,4 @@ envsubst \
 
 envsubst < /etc/nginx/lua/saml/service_provider/config.lua.template > /etc/nginx/lua/saml/service_provider/config.lua
 
-cat /etc/nginx/nginx.conf
-cat /etc/nginx/lua/saml/service_provider/config.lua
-
 nginx -g "daemon off;"
